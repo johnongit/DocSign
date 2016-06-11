@@ -1,0 +1,72 @@
+<template name="Search">
+			<form class="Search form-group">
+ <div>
+            <h3>Recherche :</h3>
+			<p>Adresse<input type="text" id="ByAddr" name="ByAddr" value="{{ByAddr}}" class="form-control"></p>
+			<p>Nom du fichier<input type="text" name="ByName" id="ByName" value="{{ByName}}" class="form-control"></p>
+			<p><input type="submit" name="Search" class="btn btn-default"></p>
+    			
+        </div>
+	
+		</form>
+		
+{{> searchdropzone}}
+
+		{{#each Files}}
+		<div class="panel panel-default" id="Files">
+			<li><b>Nom</b> : {{Name}}</li>
+			<li><b>Version</b> : {{Version}}</li>
+			<li><b>Createur</b> : {{Creator}}</li>
+			<li><b>Date d'enregistrement</b> : {{Date}}</li>
+			<li><b>Hash du fichier</b> : {{Hash}}</li>
+		</div>
+		
+		{{/each}}
+
+		{{#if WaitingSearch}}
+            {{> loadingSearch}}
+        {{/if}}
+</template>
+
+
+<template name="searchdropzone">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="searchdropzone" class="dropzone">
+        <div class="well well-drop-zone">
+          Déposer le fichier ici pour le rechercher dans la blockchain (le fichier n'est pas transmis)
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="loadingSearch">
+
+    <div class="modal fade in" id="MyModal" style="display: block;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Recherche en cours&hellip;</h4>
+                </div>
+                <div class="modal-body">
+                    <p><div class="container">
+                        <button class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Chargement...</button>
+                </div></p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->  
+</template>
+
+<template name="File">
+	{{#with Hash}}
+		{{Name}}
+	{{/with}}
+</template>

@@ -1,0 +1,64 @@
+<head>
+  <title>DocSign</title>
+ 
+</head>
+<body>
+
+<div class="container">
+	<button class="btn btn-primary" id="Sign">Ajout d'un document</button>
+	<button class="btn btn-primary" id="Search">Recherche d'un document</button>
+	<button class="btn btn-primary" id="Settings">Configuration du SmartContract</button>
+</div>    
+{{> selectFrame}}
+
+{{#if NoNode}}
+    {{> DisplayNoNodeMessage}}
+{{/if}}
+
+
+
+<br>
+</body>
+
+
+
+<template name="selectFrame">
+    <div class="container">
+        <div class="frameCarousel">
+            {{> Template.dynamic template=active data=this}}
+        </div>
+    </div>
+</template>
+
+<template name="DocSign">
+
+    {{> Sign}}
+    {{> Search}}
+	{{> Settings}}
+</template>
+
+<template name="DisplayNoNodeMessage">
+<div class="modal fade in" id="MyModal" style="display: block;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">Aucun noeud détecté &hellip;</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lancez geth avec l'argument --rpccorsdomain "http://localhost:3000" ou --rpccorsdomain "*" (attention ce paramètre '*' permet à tous les sites d'utilisers votre wallet)</p>
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->  
+</template>
+
+
+

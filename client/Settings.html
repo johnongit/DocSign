@@ -1,0 +1,137 @@
+<template name="Settings">
+
+            <h3>Création d'un SmartContract :</h3>
+			{{> CreateNewSmartContract}}
+
+		
+
+		 <div>
+        {{#if DisplayKOContract}}
+            {{> DisplayKOMessageContract}}
+        {{else}}
+            {{#if ProgressBarContract}}
+                {{> DisplayProgressBarContract}}
+            {{/if}}
+            {{#if DisplayOKContract}}
+                {{> DisplayOKMessageContract}}
+            {{/if}}
+        {{/if}}
+		</div>
+
+		<div>
+         <button class="btn btn-secondary" id="AddSmartContract">Ajout d'un SmartContract existant</button>
+		{{#if AddSmartContractAction}}
+			{{> DisplaySmartContradAddForm}}
+		{{/if}}
+		</div>
+		<br/>
+		{{#if WaitingTransactionContract}}
+            {{> loadingContract}}
+        {{/if}}
+		<div>
+		<b>Smart Contracts sélectionné</b> : {{> SmartContractSelected}}
+		
+		{{#each SmartContracts}}
+			
+			{{> SmartContract contract=_id }}
+		{{/each}}
+		
+		</div>
+</template>
+
+
+<template name="loadingContract">
+
+    <div class="modal fade in" id="MyModal" style="display: block;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">Création du contract en cours&hellip;</h4>
+                </div>
+                <div class="modal-body">
+                    <p><div class="container">
+                        <button class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Chargement...</button>
+                </div></p>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->  
+</template>
+
+<template name="CreateNewSmartContract">
+	<form class="CreateSmartContract form-group">
+		<div>
+			<p>Nom du SmartContract<input type="text" id="SmartName" name="SmartName" class="form-control"></p>
+	        <li> <b>Coût de déploiement du SmartContract:</b> {{GetContractDeplymentPriceEth}} finney ({{GetContractDeplymentPriceEur}} &euro;)</li>
+			<p><input type="submit" name="CreateSmartContract" class="btn btn-default"></p>
+	    </div>
+	</form>
+</template>
+
+<template name="DisplaySmartContradAddForm">
+	<form class="AddSmartContract form-group">
+		<p>Nom du SmartContract<input type="text" id="SmartName" name="SmartName" class="form-control"></p>
+		<p>Addresse du SmartContract<input type="text" id="SmartAddr" name="SmartAddr" class="form-control"></p>
+		<p><input type="submit" name="CreateSmartContract" class="btn btn-default"></p>
+	</form>
+
+</template>
+
+<template name="DisplayKOMessageContract">
+	<div class="alert alert-danger alert-dismissible" role="alert">
+  		<button type="button" name="CloseBox" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  		{{DisplayKOContract}}
+	</div>
+</template>
+
+<template name="DisplayOKMessageContract">
+    
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+  		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  		Le contract a été correctement enregistré
+	</div>
+</template>
+
+<template name="DisplayProgressBarContract">
+    <div class="progress">
+    	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+            {{progress}}% Complete
+        </div>
+    </div>
+</template>
+
+<template name="SmartContract">
+
+
+	{{#with contract}}
+	<div class="panel panel-default" id="SmartContract">
+		<div class="row">
+		
+			<div class="SelectContract col-xs-11 Add form-group" id={{_id}}>
+				<li><b>Nom </b>: {{Name}}</li>
+				<li><b>Addresse </b> : {{Addr}}</li>
+			</div>
+			<div class="col-xs-1">
+			<a id="removeContract" style="float:right;padding-right: 5%;padding-top: 5%;cursor: pointer;"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+			</div>
+		</div>
+	</div>
+	
+	{{/with}}	
+
+</template>
+
+<template name="SmartContractSelected">
+	{{#with SmartContractSelected}}
+		{{Name}} : {{Addr}}
+	{{/with}}
+</template>
+
+
