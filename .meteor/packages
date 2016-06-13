@@ -39,4 +39,5 @@ jparker:crypto-core
 jparker:crypto-sha256
 jparker:crypto-hmac
 frozeman:persistent-minimongo
-mquandalle:tap-i18n
+tap:i18n-bundler
+tap:i18n

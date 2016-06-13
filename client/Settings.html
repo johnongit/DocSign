@@ -1,6 +1,6 @@
 <template name="Settings">
 
-            <h3>Création d'un SmartContract :</h3>
+            <h3>{{_ "Settings.title"}} :</h3>
 			{{> CreateNewSmartContract}}
 
 		
@@ -19,7 +19,7 @@
 		</div>
 
 		<div>
-         <button class="btn btn-secondary" id="AddSmartContract">Ajout d'un SmartContract existant</button>
+         <button class="btn btn-secondary" id="AddSmartContract">{{_ "Settings.add"}}</button>
 		{{#if AddSmartContractAction}}
 			{{> DisplaySmartContradAddForm}}
 		{{/if}}
@@ -50,11 +50,11 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                     </button>
-                    <h4 class="modal-title">Création du contract en cours&hellip;</h4>
+                    <h4 class="modal-title">{{_ "Settings.prepare"}}</h4>
                 </div>
                 <div class="modal-body">
                     <p><div class="container">
-                        <button class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Chargement...</button>
+                        <button class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> {{_ "Settings.load"}}</button>
                 </div></p>
             </div>
             <div class="modal-footer">
@@ -67,8 +67,8 @@
 <template name="CreateNewSmartContract">
 	<form class="CreateSmartContract form-group">
 		<div>
-			<p>Nom du SmartContract<input type="text" id="SmartName" name="SmartName" class="form-control"></p>
-	        <li> <b>Coût de déploiement du SmartContract:</b> {{GetContractDeplymentPriceEth}} finney ({{GetContractDeplymentPriceEur}} &euro;)</li>
+			<p>{{_ "Settings.SmartContractName"}}<input type="text" id="SmartName" name="SmartName" class="form-control"></p>
+	        <li> <b>{{_ "Settings.cost"}}:</b> {{GetContractDeplymentPriceEth}} finney ({{GetContractDeplymentPriceEur}} &euro;)</li>
 			<p><input type="submit" name="CreateSmartContract" class="btn btn-default"></p>
 	    </div>
 	</form>
@@ -76,8 +76,8 @@
 
 <template name="DisplaySmartContradAddForm">
 	<form class="AddSmartContract form-group">
-		<p>Nom du SmartContract<input type="text" id="SmartName" name="SmartName" class="form-control"></p>
-		<p>Addresse du SmartContract<input type="text" id="SmartAddr" name="SmartAddr" class="form-control"></p>
+		<p>{{_ "Settings.addForm.name"}}<input type="text" id="SmartName" name="SmartName" class="form-control"></p>
+		<p>{{_ "Settings.addForm.address"}}<input type="text" id="SmartAddr" name="SmartAddr" class="form-control"></p>
 		<p><input type="submit" name="CreateSmartContract" class="btn btn-default"></p>
 	</form>
 
@@ -95,7 +95,7 @@
 
     <div class="alert alert-success alert-dismissible" role="alert">
   		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  		Le contract a été correctement enregistré
+  		{{_ "Settings.okMessage"}}
 	</div>
 </template>
 
@@ -115,8 +115,8 @@
 		<div class="row">
 		
 			<div class="SelectContract col-xs-11 Add form-group" id={{_id}}>
-				<li><b>Nom </b>: {{Name}}</li>
-				<li><b>Addresse </b> : {{Addr}}</li>
+				<li><b>{{_ "Settings.name"}} </b>: {{Name}}</li>
+				<li><b>{{_ "Settings.address"}} </b> : {{Addr}}</li>
 			</div>
 			<div class="col-xs-1">
 			<a id="removeContract" style="float:right;padding-right: 5%;padding-top: 5%;cursor: pointer;"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>

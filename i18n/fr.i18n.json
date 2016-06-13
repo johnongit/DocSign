@@ -1,0 +1,54 @@
+{
+	"Carroussel": {
+		"add": "Ajout d'un document",
+		"search": "Recherche de documents",
+		"settings": "Configuration"
+	},
+	"Add" : { 
+		"title": "Ajout : ",
+		"version": "Version",
+		"name": "Nom",
+		"hash": "Hash(SHA256)",
+		"okMessage": "L'emprunte du fichier a été correctement enregistrée",
+		"prepare": "Préparation de l'enregistrement ...",
+		"load": "Chargement ...",
+		"cost": "Coût de la signature"
+	},
+	"Dropzone" : {
+		"dropAdd": "Déposez le fichier ici pour obtenir l'emprunte (l'emprunte est calculée localement)",
+		"dropSearch": "Déposer le fichier ici pour le rechercher dans la blockchain (le fichier n'est pas transmis)"
+	},
+	"Alert" : {
+		"nodeNode" : "Aucun noeud détecté ...",
+		"gethSettings" : "Lancez geth avec l'argument --rpccorsdomain \"http://localhost:3000\" ou --rpccorsdomain \"*\" (attention ce paramètre '*' permet à tous les sites d'utilisers votre wallet)"
+	},
+	"Search" : { 
+		"title" : "Recherche : ",
+		"address": "Adresse",
+		"filename": "Nom du fichier",
+		"name" :  "Nom",
+		"hash": "Hash du fichier",
+		"date": "Date d'enregistrement",
+		"creator": "Créateur de l'enregistrement",
+		"prepare": "Recherche en cours ...",
+		"load" : "Chargement ..."
+	},
+	"Settings" : {
+		"title": "Création d'un SmartContract",
+		"SmartContractName" :"Nom du SmartContract (local au navigateur)",
+		"cost" : "Coût de déploiement du SmartContract",
+		"add" : "Ajout d'un SmartContrat existant",
+		"select" : "SmartContract sélectionné",
+		"prepare" : "Création du SmartContract en cours ...",
+		"load" : "Chargement ...",
+		"okMessage" : "Le contract a été correctement enregistré",
+		"name" : "Nom",
+		"address" : "Addresse",
+		"addForm" : {
+			"name" : "Nom",
+			"address" : "Addresse"
+		}
+
+	}
+	
+}

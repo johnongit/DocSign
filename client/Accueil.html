@@ -5,9 +5,9 @@
 <body>
 
 <div class="container">
-	<button class="btn btn-primary" id="Sign">Ajout d'un document</button>
-	<button class="btn btn-primary" id="Search">Recherche d'un document</button>
-	<button class="btn btn-primary" id="Settings">Configuration du SmartContract</button>
+	<button class="btn btn-primary" id="Sign">{{_ "Carroussel.add"}}</button>
+	<button class="btn btn-primary" id="Search">{{_ "Carroussel.search"}}</button>
+	<button class="btn btn-primary" id="Settings">{{_ "Carroussel.settings"}}</button>
 </div>    
 {{> selectFrame}}
 
@@ -46,10 +46,10 @@
           <span aria-hidden="true">&times;</span>
           <span class="sr-only">Close</span>
         </button>
-        <h4 class="modal-title">Aucun noeud détecté &hellip;</h4>
+        <h4 class="modal-title">{{_ "Alert.nodeNode"}}</h4>
       </div>
       <div class="modal-body">
-        <p>Lancez geth avec l'argument --rpccorsdomain "http://localhost:3000" ou --rpccorsdomain "*" (attention ce paramètre '*' permet à tous les sites d'utilisers votre wallet)</p>
+        <p>{{_ "Alert.gethSettings"}}</p>
       </div>
       <div class="modal-footer">
         <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

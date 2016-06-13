@@ -1,0 +1,54 @@
+{
+	"Carroussel": {
+		"add": "Add Document",
+		"search": "Search",
+		"settings": "Configure Dapp"
+	},
+	"Add" : { 
+		"title": "Add :",
+		"version": "Version",
+		"name": "Name",
+		"hash": "Hash(SHA256)",
+		"okMessage": "Hash has been registered successfully",
+		"prepare": "Prepare to registrer...",
+		"load": "loading ...",
+		"cost": "Cost"
+	},
+	"Dropzone" : {
+		"dropAdd": "Drop file here to obtain hash (operation is made localy)",
+		"dropSearch": "Drop file here to search it in the blockchain (file is not transmit)"
+	},
+	"Alert" : {
+		"nodeNode" : "No node detected ...",
+		"gethSettings" : "Laucnch geth with  --rpccorsdomain \"http://localhost:3000\" or --rpccorsdomain \"*\" (Becareful this parameter '*' allow access on your wallet for any website)"
+	},
+	"Search" : { 
+		"title" : "Search",
+		"address": "Address",
+		"filename": "Filename",
+		"name" :  "Name",
+		"hash": "Hash",
+		"date": "Date",
+		"creator": "Creator",
+		"prepare": "Searching ...",
+		"load" : "loading ..."
+	},
+	"Settings" : {
+		"title": "Create SmarContract",
+		"SmartContractName" :"SmartContract Name (saved local)",
+		"cost" : "Cost",
+		"add" : "Add existing SmartContract",
+		"select" : "Selected :",
+		"prepare" : "Deployment ...",
+		"load" : "loading ...",
+		"okMessage" : "SmartContract has been deployed successfully",
+		"name" : "Name",
+		"address" : "Address",
+		"addForm" : {
+			"name" : "Name",
+			"address" : "Address"
+		}
+
+	}
+	
+}
